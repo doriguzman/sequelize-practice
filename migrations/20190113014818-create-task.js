@@ -12,6 +12,15 @@ module.exports = {
         type: Sequelize.STRING, 
         allowedNUll:false
       },
+
+      // this is adding in the foreign key here 
+      ContextId: {
+        type: Sequelize.INTEGER,
+        onDelete: 'CASCADE',
+        references: {
+          model: 'Contexts',
+          key: 'id'
+        },
       done: {
         type: Sequelize.BOOLEAN
       },
